@@ -1,0 +1,136 @@
+/* Tông màu chủ đạo: trắng – xám nhạt – xanh lá (có thể tùy biến theo thương hiệu) */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease-in-out;
+  font-family: "Segoe UI", sans-serif;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s ease-in-out;
+}
+.close-btn:hover {
+  color: #000;
+}
+
+.title-with-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title-with-status h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.status.active {
+  background-color: #e0f2f1;
+  color: #00796b;
+}
+.status.inactive {
+  background-color: #fdecea;
+  color: #c62828;
+}
+
+.modal-content p {
+  margin: 12px 0;
+  font-size: 15px;
+  color: #555;
+}
+.modal-content p strong {
+  color: #222;
+}
+
+.moderation {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.moderation.pending {
+  color: #f57c00;
+}
+.moderation.approved {
+  color: #388e3c;
+}
+.moderation.rejected {
+  color: #d32f2f;
+}
+
+.post-images {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 14px;
+  padding-bottom: 12px;
+  scrollbar-width: thin;
+}
+
+.post-images::-webkit-scrollbar {
+  height: 6px;
+}
+.post-images::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+.post-images img {
+  height: 160px;
+  width: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+.post-images img:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,167 @@
+.myposts-container {
+  padding: 32px;
+  max-width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafc;
+  border-radius: 12px;
+}
+.title{
+  font-size: 32px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.filter-buttons button {
+  padding: 10px 18px;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.filter-buttons button:hover {
+  background-color: #e6f7ff;
+}
+
+.filter-buttons button.active {
+  background-color: #1890ff;
+  color: white;
+  border-color: #1890ff;
+}
+
+.post-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.post-table th,
+.post-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: left;
+  font-size: 14px;
+}
+
+.post-table th {
+  background-color: #2C9876;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status.active {
+  background-color: #52c41a;
+}
+
+.status.sold {
+  background-color: #f5222d;
+}
+
+.status.inactive {
+  background-color: #595959;
+}
+
+.moderation.pending {
+  color: #fa8c16;
+  font-weight: 600;
+}
+
+.moderation.approved {
+  color: #52c41a;
+  font-weight: 600;
+}
+
+.moderation.rejected {
+  color: #f5222d;
+  font-weight: 600;
+}
+
+.post-table tr:hover {
+  background-color: #f0f0f0;
+}
+
+td button {
+  margin-right: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+td button:hover {
+  opacity: 0.9;
+}
+
+td button:first-child {
+  background-color: #1890ff;
+  color: white;
+}
+
+.edit-btn {
+  background-color: #faad14;
+  color: white;
+}
+
+.delete-btn {
+  background-color: transparent;
+  color: #f5222d;
+  border: 1px solid #f5222d;
+}
+
+.delete-btn:hover {
+  background-color: #fff1f0;
+}
+
+.pagination {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  font-size: 14px;
+  border: 1px solid #d9d9d9;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pagination button:hover {
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+}
+
+.pagination button.active {
+  background-color: #1890ff;
+  color: white;
+  border-color: #1890ff;
+}
