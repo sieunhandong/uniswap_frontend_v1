@@ -74,8 +74,20 @@ const ChatPage = () => {
   }, [senderId]);
 
   useEffect(() => {
-    const newSocket = io("https://uniswap-backend-5zjz.onrender.com");
+    const newSocket = io("https://uniswap-backend-5zjz.onrender.com", {
+      withCredentials: true,
+      transports: ['websocket', 'polling'], // Thử cả WebSocket và polling
+    });
     setSocket(newSocket);
+
+    // Thêm log để kiểm tra kết nối
+    newSocket.on('connect', () => {
+      console.log('✅ Connected to socket server:', newSocket.id);
+    });
+    newSocket.on('connect_error', (err) => {
+      console.error('❌ Socket connection error:', err.message);
+    });
+
     return () => newSocket.disconnect();
   }, []);
 
