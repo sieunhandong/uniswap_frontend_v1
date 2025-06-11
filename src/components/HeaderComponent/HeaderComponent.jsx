@@ -28,7 +28,7 @@ import io from "socket.io-client";
 import { MessageCircle } from "lucide-react";
 import styled from "styled-components";
 
-const socket = io("https://uniswap-backend-5zjz.onrender.com");
+const socket = io("https://uniswap-backend-s8h6.onrender.com");
 
 // Modern styled components
 const HeaderContainer = styled.header`

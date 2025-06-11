@@ -41,7 +41,7 @@ const RatingPage = () => {
 
             setLoading(true);
             try {
-                const response = await axios.get(`https://uniswap-backend-5zjz.onrender.com/api/post/purchased?buyerId=${user.id}`, {
+                const response = await axios.get(`https://uniswap-backend-s8h6.onrender.com/api/post/purchased?buyerId=${user.id}`, {
                     headers: {
                         "Content-Type": "application/json",
                         Authorization: `Bearer ${user?.access_token || localStorage.getItem('access_token') || ''}`,
@@ -68,7 +68,7 @@ const RatingPage = () => {
 
             setLoading(true);
             try {
-                const response = await axios.get(`https://uniswap-backend-5zjz.onrender.com/api/post/rating`, {
+                const response = await axios.get(`https://uniswap-backend-s8h6.onrender.com/api/post/rating`, {
                     headers: {
                         "Content-Type": "application/json",
                         Authorization: `Bearer ${user?.access_token || localStorage.getItem('access_token') || ''}`,
@@ -124,7 +124,7 @@ const RatingPage = () => {
 
         try {
             const response = await axios.post(
-                `https://uniswap-backend-5zjz.onrender.com/api/post/${postId}/rating`,
+                `https://uniswap-backend-s8h6.onrender.com/api/post/${postId}/rating`,
                 {
                     stars: ratingData.stars,
                     comment: ratingData.comment || '',

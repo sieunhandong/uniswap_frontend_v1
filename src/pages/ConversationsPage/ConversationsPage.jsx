@@ -13,7 +13,7 @@ const ConversationsPage = () => {
     const userId = user?.id;
 
     useEffect(() => {
-        const newSocket = io("https://uniswap-backend-5zjz.onrender.com");
+        const newSocket = io("https://uniswap-backend-s8h6.onrender.com");
         setSocket(newSocket);
         return () => {
             newSocket.disconnect();

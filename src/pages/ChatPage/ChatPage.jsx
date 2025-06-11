@@ -74,7 +74,7 @@ const ChatPage = () => {
   }, [senderId]);
 
   useEffect(() => {
-    const newSocket = io("https://uniswap-backend-5zjz.onrender.com", {
+    const newSocket = io("https://uniswap-backend-s8h6.onrender.com", {
       withCredentials: true,
       transports: ['websocket', 'polling'], // Thử cả WebSocket và polling
     });
