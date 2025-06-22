@@ -1,4 +1,4 @@
-import { Col, Image, Row, Button, Divider, Tag, Typography, Space, Rate } from 'antd';
+import { Col, Image, Row } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useSelector } from 'react-redux';
@@ -27,12 +27,12 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { MessageCircle } from 'lucide-react';
 import { StarFilled } from '@ant-design/icons';
-
+import { useToast } from '../../context/ToastContext';
 const PostDetailsComponent = ({ idProduct }) => {
     const user = useSelector((state) => state.user);
     const navigate = useNavigate();
     const [isPhoneVisible, setIsPhoneVisible] = useState(false);
-
+    const { addToast } = useToast();
     // Fetch product details
     const fetchGetProductDetails = async ({ queryKey }) => {
         const id = queryKey[1];
@@ -68,8 +68,11 @@ const PostDetailsComponent = ({ idProduct }) => {
 
     useEffect(() => {
         initFacebookSDK();
-    }, []);
-    const handleChat = () => {
+    }, []); const handleChat = () => {
+        if (!user?.access_token) {
+            addToast('Bạn cần đăng nhập để nhắn tin', 'warning'); // ✅ THAY message.warning
+            return;
+        }
         if (productDetails && productDetails.userId && productDetails._id) {
             navigate(`/chat/${productDetails.userId._id}`, {
                 state: { post: productDetails },
